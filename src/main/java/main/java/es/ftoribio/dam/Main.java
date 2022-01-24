@@ -13,6 +13,8 @@ public class Main {
         cine.llenarPorDefecto();
         cine.menu();
 
+
+
     }
 
 }

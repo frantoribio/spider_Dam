@@ -82,6 +82,7 @@ public class Cine {
     public void reservarEntrada(int comprarFila, int comprarColumna) {
         sala[comprarFila][comprarColumna] = "\033[43;30m[R😄]\033[0m ";
     }
+
     public void anularReserva(int comprarFila, int comprarColumna) {
         sala[comprarFila][comprarColumna] = "\033[42;30m[L😄]\033[0m ";
     }
@@ -89,14 +90,27 @@ public class Cine {
     public void reservarTicket() {
         Scanner scanner = new Scanner(System.in);
         boolean ok;
-        int comprarFila;
-        int comprarColumna;
+        int comprarFila = 10;
+        int comprarColumna = 10;
+
         do {
+
             System.out.println("\nIntroduce un número de fila: ");
-            comprarFila = scanner.nextInt();
+            try {
+                comprarFila = scanner.nextInt();
+            }catch (Exception e){
+                System.out.println("Introduce un entero");
+                scanner.next();
+            }
+
             System.out.println("\nIntroduce un número de columna: ");
-            comprarColumna = scanner.nextInt();
+            try {
+                comprarColumna = scanner.nextInt();
+            }catch (Exception e){
+                System.out.println("Introduce un entero");
+                scanner.next();}
             ok = verificarAsiento(comprarFila,comprarColumna);
+
         } while (!ok);
 
         reservarEntrada(comprarFila,comprarColumna);
@@ -105,13 +119,26 @@ public class Cine {
     public void anularReservaTicket() {
         Scanner scanner = new Scanner(System.in);
         boolean ok;
-        int comprarFila;
-        int comprarColumna;
+        int comprarFila = 10;
+        int comprarColumna = 10;
+
         do {
+
+
             System.out.println("\nIntroduce un número de fila: ");
-            comprarFila = scanner.nextInt();
+            try {
+                comprarFila = scanner.nextInt();
+            }catch (Exception e) {
+                System.out.println("Introduce un entero");
+                scanner.next();
+            }
             System.out.println("\nIntroduce un número de columna: ");
-            comprarColumna = scanner.nextInt();
+            try {
+                comprarColumna = scanner.nextInt();
+            }catch (Exception e) {
+                System.out.println("Introduce un entero");
+                scanner.next();
+            }
             ok = verificarAsientoReservado(comprarFila,comprarColumna);
         } while (!ok);
 
@@ -122,13 +149,25 @@ public class Cine {
     public void comprarTicket() {
         Scanner scanner = new Scanner(System.in);
         boolean ok;
-        int comprarFila;
-        int comprarColumna;
+        int comprarFila = 10;
+        int comprarColumna = 10;
+
         do {
+
+
             System.out.println("\nIntroduce un número de fila: ");
-            comprarFila = scanner.nextInt();
+            try {
+                comprarFila = scanner.nextInt();
+            }catch (Exception e){
+                System.out.println("Introduce un entero");
+                scanner.next();
+            }
             System.out.println("\nIntroduce un número de columna: ");
-            comprarColumna = scanner.nextInt();
+            try {
+                comprarColumna = scanner.nextInt();
+            }catch (Exception e){
+                System.out.println("Introduce un entero");
+                scanner.next();}
             ok = verificarAsiento(comprarFila,comprarColumna);
         } while (!ok);
 
@@ -149,7 +188,7 @@ public class Cine {
     }
 
     public void menu() {
-        int opcion=-1;
+        int opcion = -1;
         Scanner scanner = new Scanner(System.in);
         String menu = "\n1. Ver asientos\n" +
                 "2. Comprar entrada\n" +
@@ -183,6 +222,7 @@ public class Cine {
                     estadisticas();
                     break;
                 case 0:
+                    System.out.println("Hasta pronto");
                     break;
 
                 default:

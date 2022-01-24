@@ -1,4 +1,4 @@
-package es.ftoribio.dam;
+package main.java.es.ftoribio.dam;
 
 public class Main {
 

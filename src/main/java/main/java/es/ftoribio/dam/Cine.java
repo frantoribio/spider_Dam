@@ -6,7 +6,7 @@ public class Cine {
     private final int fila;
     private final int columna;
     private final String[][] sala;
-    private int ticket;
+    private int butacaVendida;
     private int ingresoActual;
     private final int precio;
 
@@ -14,7 +14,7 @@ public class Cine {
         this.fila = fila;
         this.columna = columna;
         this.sala = new String[fila + 1][columna + 1];
-        this.ticket = 0;
+        this.butacaVendida = 0;
         this.ingresoActual = 0;
         this.precio = 6;
     }
@@ -73,7 +73,7 @@ public class Cine {
 
     public void comprarEntrada(int comprarFila, int comprarColumna) {
         int precio = 6;
-        ticket += 1;
+        butacaVendida += 1;
         ingresoActual += precio;
         sala[comprarFila][comprarColumna] = "\033[41;30m[O😄]\033[0m ";
         System.out.println("\nEl precio de la entrada es " + precio + " €.");
@@ -176,13 +176,13 @@ public class Cine {
 
     public float porcentajeVentas() {
         int cantidadAsientos = fila * columna;
-        return Math.round(((float) ticket / (float) cantidadAsientos * 100) * 100) / 100;
+        return Math.round(((float) butacaVendida / (float) cantidadAsientos * 100) * 100) / 100;
     }
 
 
     public void estadisticas() {
-        ingresoActual = ticket * precio;
-        System.out.println("El número de asientos vendidos son: " + ticket + "\n" +
+        ingresoActual = butacaVendida * precio;
+        System.out.println("El número de asientos vendidos son: " + butacaVendida + "\n" +
                 "El porcentaje de asientos vendidos es: " + porcentajeVentas() + " %\n" +
                 "El total recaudado es: " + ingresoActual + "€");
     }

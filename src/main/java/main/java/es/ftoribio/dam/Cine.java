@@ -23,7 +23,7 @@ public class Cine {
         for (int i = 0; i < sala.length; i++) {
             for (int j = 0; j < sala[0].length; j++) {
                 if (i == 0 && j == 0) sala[i][j] = " ";
-                else if (i == 0) sala[i][j] = String.valueOf(j) + "     ";
+                else if (i == 0) sala[i][j] = String.valueOf(j) + "    ";
                 else if (j == 0) sala[i][j] = String.valueOf(i);
                 else sala[i][j] = "\033[42;30m[L😄]\033[0m ";
             }
@@ -76,7 +76,7 @@ public class Cine {
         butacaVendida += 1;
         ingresoActual += precio;
         sala[comprarFila][comprarColumna] = "\033[41;30m[O😄]\033[0m ";
-        System.out.println("\nEl precio de la entrada es " + precio + " €.");
+        System.out.println("\nEl precio de la entrada es " + precio + " Euros.");
     }
 
     public void reservarEntrada(int comprarFila, int comprarColumna) {
@@ -176,7 +176,7 @@ public class Cine {
 
     public float porcentajeVentas() {
         int cantidadAsientos = fila * columna;
-        return Math.round(((float) butacaVendida / (float) cantidadAsientos * 100) * 100) / 100;
+        return Math.round(((float) butacaVendida / (float) cantidadAsientos * 100f) * 100f) / 100f;
     }
 
 
@@ -184,7 +184,7 @@ public class Cine {
         ingresoActual = butacaVendida * precio;
         System.out.println("El número de asientos vendidos son: " + butacaVendida + "\n" +
                 "El porcentaje de asientos vendidos es: " + porcentajeVentas() + " %\n" +
-                "El total recaudado es: " + ingresoActual + "€");
+                "El total recaudado es: " + ingresoActual + " Euros.");
     }
 
     public void menu() {

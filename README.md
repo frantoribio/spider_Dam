@@ -1,6 +1,6 @@
 # spider_Dam
-sala de cine
-POO ejercicio clase
+Sala de cine. <br>
+POO ejercicio de clase. <br>
 Montamos un CINE de una SALA, nuestra SALA se organiza en filas y columnas de BUTACAS (45 butacas organnizadas en 5 filas y 9 columnas). Nuestra aplicación, mediante un MENÚ PRINCIPAL, debe permitirnos las siguientes acciones:
 
 	0. Salir (siempre que se termine una opción se vuelve al menú principal).
